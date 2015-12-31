@@ -1,0 +1,16 @@
+{
+  "name": "commonexceptions",
+  "version": "0.0.1",
+  "description": "C++ library to encapsulate common used exceptions",
+  "scripts": {
+    "configure": "./waf configure",
+    "build": "./waf build",
+    "configure-build": "npm run configure build"
+  },
+  "keywords": [
+    "c++",
+    "exceptions"
+  ],
+  "author": "Paulo Brizolara",
+  "license": "MIT"
+}
