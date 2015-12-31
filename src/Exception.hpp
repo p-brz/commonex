@@ -17,16 +17,49 @@ private:
 	std::string cause;
     std::string message;
 public:
-    Exception(const std::string & cause);
-    Exception(const std::string & className, const std::string & message);
-    Exception(const std::string & className, const std::string & message, const std::exception & cause);
-    virtual ~Exception() throw();
-    virtual const char* what() const throw();
+    Exception(const std::string & cause)
+    : cause(cause)
+    , message(std::string())
+    {}
+
+    Exception(const std::string & className, const std::string & message)
+    : cause(generateMessage(className, message))
+    , message(message)
+    {}
+
+    Exception(const std::string & className, const std::string & message, const std::exception & cause)
+    : cause(generateMessage(className, message, &cause))
+    , message(message)
+    {}
+
+    virtual ~Exception() throw() {}
+
+    virtual const char* what() const throw(){
+        return cause.c_str();
+    }
     /** Return the message used to create this exception*/
-    virtual const std::string & getMessage() const;
+    virtual const std::string & getMessage() const
+    {
+        return message;
+    }
+
 protected:
     static std::string generateMessage(const std::string & className
-                       , const std::string & message, const std::exception * cause=NULL);
+    , const std::string & message, const std::exception * cause=NULL)
+    {
+        std::string errMessage;
+        if(!className.empty()){
+            errMessage.append(className).append(": \t");
+        }
+        errMessage.append(message);
+
+        if(cause != NULL && cause->what() != NULL){
+            errMessage.append("\n");
+            errMessage.append("Caused By:\n\t").append(cause->what());
+        }
+
+        return errMessage;
+    }
 };
 
 #define EXCEPTION_SUBCLASS(ClassName, SuperClass) \
