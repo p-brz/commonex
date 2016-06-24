@@ -75,7 +75,7 @@ See conan [integrations](http://docs.conan.io/en/latest/integrations.html) to le
 Example:
 
     ...
-    #include commonex/commenex.h
+    #include commonex/commonex.h
 
     EXCEPTION_CLASS(InvalidArgsException);
 
