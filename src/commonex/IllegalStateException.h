@@ -3,8 +3,8 @@
 
 #include "Exception.hpp"
 
-namespace CommonExceptions {
-    EXCEPTION_CLASS(IllegalStateException);
+namespace commonex {
+    COMMONEX_CLASS(IllegalStateException);
 }//namespace
 
 #endif // ILLEGALSTATEEXCEPTION_H

@@ -10,7 +10,7 @@
 
 #include <string>
 
-namespace CommonExceptions {
+namespace commonex {
 
 class Exception : public std::exception{
 private:
@@ -62,7 +62,7 @@ protected:
     }
 };
 
-#define EXCEPTION_SUBCLASS(ClassName, SuperClass) \
+#define COMMONEX_SUBCLASS(ClassName, SuperClass) \
 class ClassName : public SuperClass{\
 public:\
     ClassName(const std::string & message="")\
@@ -81,12 +81,12 @@ protected:\
     {}\
 }
 
-#define EXCEPTION_CLASS(ClassName) EXCEPTION_SUBCLASS(ClassName, ::CommonExceptions::Exception)
+#define COMMONEX_CLASS(ClassName) COMMONEX_SUBCLASS(ClassName, ::commonex::Exception)
 
 #define COMMON_EXC_toString(x) #x
 #define COMMON_EXC_toString_(x) COMMON_EXC_toString(x)
 #define COMMON_EXC__STRLINE__ COMMON_EXC_toString_(__LINE__)
-#define COMMON_EXC_HERE __FILE__ "::" COMMON_EXC__STRLINE__
+#define COMMONEX_HERE __FILE__ "::" COMMON_EXC__STRLINE__
 
 } /* namespace CommonExceptions */
 

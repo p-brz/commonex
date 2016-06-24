@@ -3,20 +3,17 @@
 
 #include "Exception.hpp"
 
-namespace CommonExceptions {
+namespace commonex {
+    COMMONEX_CLASS(NullPointerException);
 
-EXCEPTION_CLASS(NullPointerException);
-
-#define CHECK_NOT_NULL(pointer)\
-    CommonExceptions::assertNotNull(pointer, \
-                        COMMON_EXC_HERE  ": " #pointer " is null")
+    #define COMMONEX_CHECK_NOTNULL(pointer)\
+        commonex::assertNotNull(pointer, COMMONEX_HERE  ": " #pointer " is null")
 
     inline void assertNotNull(const void * ptr, const char * msg=""){
         if(ptr == NULL){
             throw NullPointerException(msg);
         }
     }
-
 }//namespace
 
 #endif // NULLPOINTEREXCEPTION_H

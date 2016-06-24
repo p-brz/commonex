@@ -5,18 +5,18 @@
 
 #include <sstream>
 
-namespace CommonExceptions {
+namespace commonex {
 
-EXCEPTION_CLASS(IndexOutOfBoundsException);
+COMMONEX_CLASS(IndexOutOfBoundsException);
 
-#define COMMON_EXC_BOUNDS_MSG(size, index)\
-    ::CommonExceptions::makeCheckBoundsMessage(COMMON_EXC_HERE, size, index)
+#define COMMONEX_BOUNDS_MSG(size, index)\
+    ::commonex::makeCheckBoundsMessage(COMMONEX_HERE, size, index)
 
-#define COMMON_EXC_CHECK_BOUNDS(collection, index)\
-            ::CommonExceptions::checkIndex(collection, index, COMMON_EXC_BOUNDS_MSG(collection.size(), index))
+#define COMMONEX_CHECK_BOUNDS(collection, index)\
+            ::commonex::checkIndex(collection, index, COMMONEX_BOUNDS_MSG(collection.size(), index))
 
-#define COMMON_EXC_CHECK_NEG_BOUND(collection, index)\
-            ::CommonExceptions::checkNegativeIndex(index, COMMON_EXC_BOUNDS_MSG(collection.size(), index))
+#define COMMONEX_CHECK_NEG_BOUND(collection, index)\
+            ::commonex::checkNegativeIndex(index, COMMONEX_BOUNDS_MSG(collection.size(), index))
 
 template<typename Collection, typename Index>
 inline void checkIndex(const Collection & coll, const Index index

@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import os
+from os import path
+
+def configure(ctx):
+    pass
+
+def build(ctx):
+    if not ctx.options.tests:
+        return
+
+    ctx.program(target="tests"
+        , source    = ctx.path.ant_glob('*.cpp', src=True,dir=False)
+        , use       = ["commonex", "catch"]
+    )

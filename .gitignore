@@ -1,10 +1,22 @@
 #build dir
 build/
 
+#Qt creator
+*.config
+*.creator
+*.creator.user
+*.files
+*.includes
+
+#Conan
+conanbuildinfo*
+conaninfo.txt
+*.pyc
+
 # Created by https://www.gitignore.io/api/waf,c++
 
 ### Waf ###
-# for projects that use Waf for building: http://code.google.com/p/waf/
+# for projects that use Waf for building: https://waf.io
 .waf-*
 .waf3-*
 .lock-*

@@ -3,8 +3,8 @@
 
 #include "Exception.hpp"
 
-namespace CommonExceptions {
-    EXCEPTION_CLASS(IOException);
+namespace commonex {
+    COMMONEX_CLASS(IOException);
 }//namespace
 
 #endif // IOEXCEPTION_H

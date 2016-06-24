@@ -11,9 +11,9 @@
 #include "Exception.hpp"
 #include <string>
 
-namespace CommonExceptions {
+namespace commonex {
 
-    EXCEPTION_CLASS(IllegalArgumentException);
+    COMMONEX_CLASS(IllegalArgumentException);
 
 }//namespace
 
