@@ -23,7 +23,7 @@ class CommonEx(ConanFile):
     requires = tuple()
 
     test_requires = (
-        "catch/1.5.0@paulobrizolara/stable",
+        "catch/1.5.0@TyRoXx/stable",
         "WafGenerator/0.0.1@paulobrizolara/experimental"
     )
 
